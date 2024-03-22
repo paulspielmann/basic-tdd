@@ -29,7 +29,7 @@ Rappels:
 
 On veut faire un logiciel de to-do list (gestionnaire de tâches).
 
-0/ Créer un dépôt Git vide pour vos travaux.
+0/ Forker ce dépôt pour vos travaux
 
 1/ Définir les fonctionnalités de base d'une to-do list et proposer une technique pour tester chaque fonctionnalité listée. Rédiger un fichier SPECS.md (au format texte ou Markdown) avec ces informations.
 
