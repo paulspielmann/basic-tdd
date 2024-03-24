@@ -1,4 +1,3 @@
-import pytest
 import math
 
 
@@ -71,7 +70,7 @@ class ShapeManager:
 
     def remove_shape(self, shape):
         if shape in self.shapes:
-            self.shapes.pop(shape)
+            self.shapes.remove(shape)
 
     def get_all_shapes(self):
         return self.shapes

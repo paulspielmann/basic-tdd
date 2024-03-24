@@ -58,11 +58,40 @@ def test_scale():
 
 # ShapeManager
 sm = ShapeManager()
+control = [s, c, r]
 
 
 def test_sm_add_shape():
     sm.add_shape(s)
     assert len(sm.shapes) == 1
+    assert sm.shapes.pop() == s
+    sm.add_shape(s)
     sm.add_shape(c)
     sm.add_shape(r)
     assert len(sm.shapes) == 3
+    assert sm.shapes == control
+
+
+def test_sm_remove_shape():
+    sm.remove_shape(r)
+    for shape in sm.shapes:
+        assert shape != r
+    sm.add_shape(r)
+    sm.add_shape(r)
+    sm.remove_shape(r)
+    assert sm.shapes == control
+
+
+def test_sm_get_all_shapes():
+    assert sm.get_all_shapes() == control
+    sm.add_shape(s)
+    control.append(s)
+    sm.add_shape(c)
+    control.append(c)
+    sm.add_shape(c)
+    control.append(c)
+    assert sm.get_all_shapes() == control
+
+
+def test_sm_get_total_area():
+    assert sm.get_total_area() == sum(sm.shapes)
