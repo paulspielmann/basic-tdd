@@ -5,7 +5,7 @@ from main import Square, Circle, Rectangle, ShapeManager
 
 # Tests attributs
 @pytest.mark.xfail(reason="Constructors called with non-numerical values")
-def test_wrong_init():
+def test_init_wrong_params():
     s = Square("a")
     r = Rectangle('b', 4)
     c = Circle([1, 2, 3])
